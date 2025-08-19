@@ -8,8 +8,8 @@
     <?php include '../assets/bootstrap.php'; ?>
 </head>
 
-<body>
-    <div class="container mt-5">
+<body class="min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="container mt-5 ">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
