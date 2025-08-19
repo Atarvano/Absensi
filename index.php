@@ -1,10 +1,13 @@
 <?php
 session_start();
 
+
+
+
 if (isset($_SESSION['login'])) {
-    require 'views/dashboard.php';
+    header('Location: views/dashboard.php');
 } else {
-    require 'views/login.php';
+    header('Location: views/login.php');
 }
 
 

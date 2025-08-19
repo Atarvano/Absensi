@@ -1,5 +1,5 @@
 # Pra Sertifikasi
 
-![Cloudflare Proxy Image](https://kpopping.com/cloudflare-proxy/b132488ccb74aef5fcb86b533ed82462)
+[Cloudflare Proxy Link](https://kpopping.com/cloudflare-proxy/b132488ccb74aef5fcb86b533ed82462)
 
-Ini adalah tahap pra sertifikasi.
+Nah sekarang perbaiki dan kasih tau bahwa ini pra sertifikasi
