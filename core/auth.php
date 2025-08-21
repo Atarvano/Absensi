@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
 
     } else {
-        echo "Hashed input password: " . password_hash($password, PASSWORD_DEFAULT);
+        $error = "Invalid username or password.";
     }
 
 

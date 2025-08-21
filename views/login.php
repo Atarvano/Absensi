@@ -1,3 +1,4 @@
+<?php require_once '../core/auth.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,12 @@
                         <h3>Login</h3>
                     </div>
                     <div class="card-body">
-                        <form action="../core/auth.php" method="POST">
+                        <form action="login.php" method="POST">
+                            <?php if (isset($error)): ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?= $error ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" id="username" name="username" class="form-control" required>
