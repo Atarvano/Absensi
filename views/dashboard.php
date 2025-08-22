@@ -44,7 +44,25 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+                require_once '../core/database.php';
 
+                $stmt = $pdo->prepare("SELECT * FROM guru");
+                $stmt->execute();
+                $keterlambatan = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($keterlambatan as $row) {
+                    echo "<tr>
+                        <th scope='row'>{$row['id']}</th>
+                        <td>{$row['nama']}</td>
+                        <td>{$row['username']}</td>
+                        <td>{$row['alasan']}</td>
+                        <td>
+                            <a href='update.php?id={$row['id']}'>Update</a>
+                            <a href='delete.php?id={$row['id']}'>Delete</a>
+                        </td>
+                    </tr>";
+                }
+                ?>
                 <tr>
                     <th scope="row">1</th>
                     <td>Irvani Heldy Fauzan</td>
