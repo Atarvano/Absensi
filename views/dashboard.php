@@ -37,6 +37,15 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Kelas:</label>
+                            <select class="form-select" id="recipient-name">
+                                <option selected>Pilih Kelas</option>
+                                <option value="1">Kelas 1</option>
+                                <option value="2">Kelas 2</option>
+                                <option value="3">Kelas 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Nama:</label>
                             <input type="text" class="form-control" id="recipient-name">
                         </div>
@@ -71,6 +80,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Kelas</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Alasan Terlambat</th>
                     <th scope="col">Action</th>
@@ -82,9 +92,10 @@
                 foreach ($keterlambatan as $row) {
                     ?>
                     <tr>
-                        <th scope="row"><?= $row['id']; ?></th>
+                        <th scope="row"></th>
                         <td><?= $row['nama']; ?></td>
-                        <td><?= $row['username']; ?></td>
+                        <td><?= $row['nama_kelas']; ?></td>
+                        <td><?= $row['tanggal']; ?></td>
                         <td><?= $row['alasan']; ?></td>
                         <td>
                             <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
