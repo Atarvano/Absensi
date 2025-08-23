@@ -84,27 +84,18 @@
                 $stmt->execute();
                 $keterlambatan = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($keterlambatan as $row) {
-                    echo "<tr>
-                        <th scope='row'>{$row['id']}</th>
-                        <td>{$row['nama']}</td>
-                        <td>{$row['username']}</td>
-                        <td>{$row['alasan']}</td>
+                    ?>
+                    <tr>
+                        <th scope="row"><?= $row['id']; ?></th>
+                        <td><?= $row['nama']; ?></td>
+                        <td><?= $row['username']; ?></td>
+                        <td><?= $row['alasan']; ?></td>
                         <td>
-                            <a href='update.php?id={$row['id']}'>Update</a>
-                            <a href='delete.php?id={$row['id']}'>Delete</a>
+                            <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
-                    </tr>";
-                }
-                ?>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Irvani Heldy Fauzan</td>
-                    <td>27-10-2009</td>
-                    <td>CUci Baju</td>
-                    <td>
-                        <a href="">Update</a>
-                        <a href="">delete</a>
-                    </td>
+
+                    <?php } ?>
                 </tr>
             </tbody>
         </table>
