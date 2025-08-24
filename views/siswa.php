@@ -79,7 +79,8 @@
                         <td><?= $row['nama_kelas']; ?></td>
                         <td>
                             <a class="btn btn-primary" href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
-                            <a class="btn btn-danger" href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
+                            <a class="btn btn-danger"
+                                href="../model/delete/siswa.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
 
                     <?php } ?>

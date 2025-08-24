@@ -63,7 +63,7 @@
                         <td><?= $row['nama_kelas']; ?></td>
                         <td>
                             <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
-                            <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
+                            <a href="../model/delete/kelas.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
 
                     <?php } ?>
