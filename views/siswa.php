@@ -52,8 +52,12 @@
             <h1>Dashboard</h1>
             <p>Siswa</p>
         </div>
-        <div class="d-flex my-3">
+        <div class="d-flex my-3 justify-content-between">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
+            <form action="">
+                <input type="text" name="search" placeholder="Search...">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
         </div>
         <table class="table table-striped">
             <thead>
@@ -66,15 +70,16 @@
             </thead>
             <tbody>
                 <?php
+                $no = 1;
                 foreach ($siswa as $row) {
                     ?>
                     <tr>
-                        <th scope="row"></th>
+                        <th scope="row"><?= $no++; ?></th>
                         <td><?= $row['nama']; ?></td>
                         <td><?= $row['nama_kelas']; ?></td>
                         <td>
-                            <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
-                            <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
+                            <a class="btn btn-primary" href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a class="btn btn-danger" href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
 
                     <?php } ?>

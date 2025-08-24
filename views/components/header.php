@@ -7,7 +7,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="dashboard.php">Home</a>
+                <a class="nav-link" aria-current="page" href="siswa.php">Siswa</a>
+                <a class="nav-link" aria-current="page" href="kelas.php">Kelas</a>
                 <a class="nav-link" href="#">Logout</a>
             </div>
         </div>
