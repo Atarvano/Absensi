@@ -6,4 +6,8 @@ $stmt = $pdo->prepare("SELECT s.id, s.nama, k.nama_kelas FROM siswa s JOIN kelas
 $stmt->execute();
 $siswa = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt2 = $pdo->prepare("SELECT * FROM kelas");
+$stmt2->execute();
+$kelas = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
