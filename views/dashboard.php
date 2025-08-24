@@ -88,7 +88,7 @@
             </thead>
             <tbody>
                 <?php
-                require_once '../model/dashboard.php';
+                require_once '../model/get/dashboard.php';
                 foreach ($keterlambatan as $row) {
                     ?>
                     <tr>
