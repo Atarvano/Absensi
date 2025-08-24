@@ -1,5 +1,5 @@
 # Pra Sertifikasi
 
-![Cloudflare Proxy Image](https://kpopping.com/cloudflare-proxy/b132488ccb74aef5fcb86b533ed82462)
+![My Kisah](https://kpopping.com/documents/9b/0/800/250615-JIWOO-at-Fansign-Event-documents-1.jpeg)
 
 Ini adalah tahap pra sertifikasi.
