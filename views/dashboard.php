@@ -10,7 +10,12 @@
 
 <body>
     <?php include 'components/header.php';
-    require_once '../model/get/dashboard.php'; ?>
+    require_once '../model/get/dashboard.php';
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../index.php");
+        exit();
+    } ?>
 
 
 
@@ -91,7 +96,8 @@
                         <td><?= $row['tanggal']; ?></td>
                         <td><?= $row['alasan']; ?></td>
                         <td>
-                            <a class="btn btn-primary" href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a class="btn btn-primary"
+                                href="update/dashboard.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
                             <a class="btn btn-danger"
                                 href="../model/delete/dashboard.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>

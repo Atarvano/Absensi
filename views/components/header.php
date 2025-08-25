@@ -10,7 +10,7 @@
                 <a class="nav-link" aria-current="page" href="dashboard.php">Home</a>
                 <a class="nav-link" aria-current="page" href="siswa.php">Siswa</a>
                 <a class="nav-link" aria-current="page" href="kelas.php">Kelas</a>
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="../core/logout.php">Logout</a>
             </div>
         </div>
     </div>

@@ -14,8 +14,11 @@
 <body>
     <?php include 'components/header.php';
     require_once '../model/get/siswa.php';
-    ?>
-
+    session_start();
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../index.php");
+        exit();
+    } ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -54,8 +57,13 @@
         </div>
         <div class="d-flex my-3 justify-content-between">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
-            <form action="">
-                <input type="text" name="search" placeholder="Search...">
+            <form action="" class="d-flex">
+                <select class="form-select me-2" name="kelas" id="">
+                    <option value="">Pilih Kelas</option>
+                    <?php foreach ($kelas as $k): ?>
+                        <option value="<?= $k['id']; ?>"><?= $k['nama_kelas']; ?></option>
+                    <?php endforeach; ?>
+                </select>
                 <button type="submit" class="btn btn-secondary">Search</button>
             </form>
         </div>
@@ -78,7 +86,8 @@
                         <td><?= $row['nama']; ?></td>
                         <td><?= $row['nama_kelas']; ?></td>
                         <td>
-                            <a class="btn btn-primary" href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a class="btn btn-primary"
+                                href="update/siswa.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
                             <a class="btn btn-danger"
                                 href="../model/delete/siswa.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>

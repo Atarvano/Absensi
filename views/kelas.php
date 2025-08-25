@@ -7,7 +7,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard</title>
-        <?php include '../assets/bootstrap.php'; ?>
+        <?php include '../assets/bootstrap.php';
+        session_start();
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: login.php");
+            exit();
+        } ?>
     </head>
 </head>
 
@@ -62,8 +67,10 @@
                         <th scope="row"><?= $no++; ?></th>
                         <td><?= $row['nama_kelas']; ?></td>
                         <td>
-                            <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
-                            <a href="../model/delete/kelas.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
+                            <a class="btn btn-primary"
+                                href="update/kelas.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a class="btn btn-danger"
+                                href="../model/delete/siswa.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
 
                     <?php } ?>
