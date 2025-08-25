@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 
     $stmt = $pdo->prepare("INSERT INTO keterlambatan (id_siswa, alasan, tanggal) VALUES (?, ?, ?)");
     if ($stmt->execute([$siswa, $alasan, $tanggal])) {
-        header("Location: ../../views/kelas.php");
+        header("Location: ../../views/dashboard.php");
     }
 
 }
