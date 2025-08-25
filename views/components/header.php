@@ -10,6 +10,7 @@
                 <a class="nav-link" aria-current="page" href="dashboard.php">Home</a>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
                     <a class="nav-link" aria-current="page" href="siswa.php">Siswa</a>
+                    <a class="nav-link" aria-current="page" href="guru.php">guru</a>
                     <a class="nav-link" aria-current="page" href="kelas.php">Kelas</a>
                 <?php endif; ?>
                 <a class="nav-link" href="../core/logout.php">Logout</a>
