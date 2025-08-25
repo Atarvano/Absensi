@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <?php include 'components/header.php'; ?>
+    <?php include 'components/header.php';
+    require_once '../model/get/dashboard.php'; ?>
 
 
 
@@ -21,33 +22,40 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="../model/add/keterlambatan.php" method="POST">
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Kelas:</label>
-                            <select class="form-select" id="recipient-name">
+                            <label for="kelas" class="col-form-label">Kelas:</label>
+                            <select class="form-select" id="kelas">
                                 <option selected>Pilih Kelas</option>
-                                <option value="1">Kelas 1</option>
-                                <option value="2">Kelas 2</option>
-                                <option value="3">Kelas 3</option>
+                                <?php
+                                $stmt4 = $pdo->prepare("SELECT * FROM Kelas");
+                                $stmt4->execute();
+                                $kelas2 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($kelas2 as $k):
+                                    ?>
+                                    <option value="<?= $k['id']; ?>"><?= $k['nama_kelas']; ?></option>
+
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nama:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="siswa" class="col-form-label">Nama:</label>
+                            <select class="form-select" id="siswa" name="siswa">
+                                <option selected>Pilih Siswa</option>
+
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Tanggal:</label>
-                            <input type="date" class="form-control" id="recipient-name">
+                            <input type="date" class="form-control" id="recipient-name" name="tanggal">
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Alasan Terlambat:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" id="message-text" name="alasan"></textarea>
                         </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
                 </div>
             </div>
         </div>
@@ -74,7 +82,6 @@
             </thead>
             <tbody>
                 <?php
-                require_once '../model/get/dashboard.php';
                 foreach ($keterlambatan as $row) {
                     ?>
                     <tr>
@@ -84,8 +91,9 @@
                         <td><?= $row['tanggal']; ?></td>
                         <td><?= $row['alasan']; ?></td>
                         <td>
-                            <a href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
-                            <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
+                            <a class="btn btn-primary" href="update.php?id=<?= htmlspecialchars($row['id']); ?>">Update</a>
+                            <a class="btn btn-danger"
+                                href="../model/delete/dashboard.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
                         </td>
 
                     <?php } ?>
@@ -94,5 +102,7 @@
         </table>
     </div>
 </body>
+
+<script src="../assets/js/index.js"></script>
 
 </html>
