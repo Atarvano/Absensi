@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <?php include '../assets/bootstrap.php'; ?>
+    <?php include '../assets/bootstrap.php';
+    session_start();
+    ?>
 </head>
 
 <body>
     <?php include 'components/header.php';
     require_once '../model/get/dashboard.php';
-    session_start();
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../index.php");
         exit();
@@ -73,6 +74,7 @@
         </div>
         <div class="d-flex my-3">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
+            <a href="pdf.php" class="btn btn-danger ms-2">Download PDF</a>
         </div>
         <table class="table table-striped">
             <thead>

@@ -7,14 +7,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dashboard</title>
-        <?php include '../assets/bootstrap.php'; ?>
+        <?php include '../assets/bootstrap.php';
+        session_start(); ?>
     </head>
 </head>
 
 <body>
     <?php include 'components/header.php';
     require_once '../model/get/siswa.php';
-    session_start();
+
     if (!isset($_SESSION['user_id'])) {
         header("Location: ../index.php");
         exit();
