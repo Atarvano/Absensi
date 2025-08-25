@@ -1,6 +1,6 @@
 const kelas = document.getElementById("kelas");
 
-kelas.addEventListener("change", (event) => {
+kelas.addEventListener("click", (event) => {
   const value = event.target.value;
 
   fetch("../model/add/keterlambatan.php", {
