@@ -74,6 +74,11 @@
         </div>
         <div class="d-flex my-3">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
+            <form action="" class="d-flex ms-2">
+                <input type="text" class="form-control me-2" name="nama" placeholder="Cari Nama Siswa"
+                    value="<?= isset($_GET['nama']) ? htmlspecialchars($_GET['nama']) : '' ?>">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
             <a href="pdf.php" class="btn btn-danger ms-2">Download PDF</a>
         </div>
         <table class="table table-striped">
