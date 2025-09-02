@@ -59,12 +59,8 @@
         <div class="d-flex my-3 justify-content-between">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
             <form action="" class="d-flex">
-                <select class="form-select me-2" name="kelas" id="">
-                    <option value="">Pilih Kelas</option>
-                    <?php foreach ($kelas as $k): ?>
-                        <option value="<?= $k['id']; ?>"><?= $k['nama_kelas']; ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <input type="text" class="form-control me-2" name="nama" placeholder="Cari Nama Siswa"
+                    value="<?= isset($_GET['nama']) ? htmlspecialchars($_GET['nama']) : '' ?>">
                 <button type="submit" class="btn btn-secondary">Search</button>
             </form>
         </div>

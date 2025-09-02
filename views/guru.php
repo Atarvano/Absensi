@@ -55,8 +55,13 @@
             <h1>Dashboard</h1>
             <p>Guru</p>
         </div>
-        <div class="d-flex my-3">
+        <div class="d-flex my-3 justify-content-between">
             <a href="" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
+            <form action="" class="d-flex ms-2">
+                <input type="text" class="form-control me-2" name="nama" placeholder="Cari Nama Guru"
+                    value="<?= isset($_GET['nama']) ? htmlspecialchars($_GET['nama']) : '' ?>">
+                <button type="submit" class="btn btn-secondary">Search</button>
+            </form>
         </div>
         <table class="table table-striped">
             <thead>
